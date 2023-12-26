@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
+var MAX_SPEED = 100
 var velocity = Vector2.ZERO
 var inputVector = Vector2.ZERO
-var speed = 4
 
 func _ready():
 	print("hello world!")
@@ -16,4 +16,4 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2.ZERO
 		
-	move_and_collide(velocity)
+	move_and_collide(velocity * delta * MAX_SPEED)
